@@ -11,7 +11,7 @@
 
 
 ## Introduction
-This project is to learn about several types of analog sensors and understand their scientific principle, 
+This projects is to learn about several types of analog sensors and understand their scientific principle, 
 operation and programming with Arduino ,We will cover several types : 👍 
 
  1. Light Dependent Resistor (LDR) or Photoresistor 
@@ -21,7 +21,7 @@ operation and programming with Arduino ,We will cover several types : 👍
    
    is a device whose resistivity is a function of the incident electromagnetic radiation. Hence, 
    they are lightsensitive devices. They are also called as photoconductors, photoconductive cells or simply photocells.
-   They are made up of semiconductor materials that have high resistance. 
+   They are made up of semiconductor materials that have high resistance , we will use it in a progect to turn on and off a LED  .
    
    ### Analog Sound Sensor
    
@@ -39,17 +39,18 @@ operation and programming with Arduino ,We will cover several types : 👍
 
 
 ## Technologies
-Project is created with:
+Projects is created with:
 * Arduino IDE 1.8.19 [To Downloud](https://www.arduino.cc/en/software)
 * Proteus [To Downloud](https://www.labcenter.com/simulation/)
 	
 ## Components required
-### 1. Unipolar Stepper with ULN2003 
+### 1.LDR to turn on and off a LED
+
     1. Arduino UNO
-    2. 1 – 28BYJ-48 Unipolar Stepper
+    2. LED
     3. jumper wirs
-    4. driver board ULN2003
-    5. bettrey  5 and 12 volt 
+    4. Resistor 220 , 10k ohm 
+    5. USB-A to Micro-USB Cable
     6. breadboard
     
 ### 2. Bipolar Stepper with L293D Motor Driver IC
@@ -59,32 +60,17 @@ Project is created with:
     4. L293D Motor Driver IC
     5. bettrey  5 and 12 volt 
     6. breadboard
-    
-### 3. BIG Stepper Motors NEMA 23 Bipolar with DM860A Microstep Driver .
-    1. Arduino UNO
-    2. 1  NEMA 23 bipolar stepper
-    3. jumper wirs
-    4. DM860A Microstep Driver
-    5. bettrey 24 volt 
-    6. breadboard
-    7. push button 
-    8. 10 k ohm
-    9. potentiometer
+
     
 ## Connections
 
-### 1. Unipolar Stepper with ULN2003
+### 1. LDR to turn on and off a LED
 
-     connecting ULN2003 pin1 to pin 8 in Ardunio
-     connecting ULN2003 pin2 to pin 9 in Ardunio
-     connecting ULN2003 pin3 to pin 10 in Ardunio
-     connecting ULN2003 pin4 to pin 11 in Ardunio
-     connecting ULN2003 pin16 to pin1 in stepper
-     connecting ULN2003 pin15 to pin2 in stepper
-     connecting ULN2003 pin14 to pin3 in stepper
-     connecting ULN2003 pin13 to pin4 in stepper
-     connecting ULN2003 pin9 and the 2 2VDD pin in stepper motor to 12v battery 
-     Connect ground to ground
+   Connect the 3.3v output of the Arduino to the positive rail of the breadboard
+   Connect the ground to the negative rail of the breadboard
+   Connect the 220ohm resistor to the long leg (+ve) of the LED
+   Then we will connect the other leg of the resistor to pin number 13 (digital pin) of the Arduino
+   and the shorter leg of the LED to the negative rail of the breadboard
      
  ### 2. Bipolar Stepper with L293D Motor Driver IC
  
