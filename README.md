@@ -1,1 +1,3 @@
-# Design-and-programming-of-an-analogue-electronic-circuit
+# Design and programming of an electronic circuit for an analogue sensor
+
+
