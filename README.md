@@ -11,14 +11,31 @@
 
 
 ## Introduction
+This project is to learn about several types of analog sensors and understand their scientific principle, 
+operation and programming with Arduino ,We will cover several types : 👍 
 
-  ,We will cover several topics : 👍 
+ 1. Light Dependent Resistor (LDR) or Photoresistor 
+ 2. Analog Sound Sensor
+ 
+   ### Light Dependent Resistor (LDR) or Photoresistor 
+   
+   is a device whose resistivity is a function of the incident electromagnetic radiation. Hence, 
+   they are lightsensitive devices. They are also called as photoconductors, photoconductive cells or simply photocells.
+   They are made up of semiconductor materials that have high resistance. 
+   
+    ### Analog Sound Sensor
+   
+   
+   Sound detection sensor works similarly to our Ears, having diaphragm which converts vibration into signals.
+   However, what’s different as that a sound sensor ,consists of an in-built capacitive microphone, peak detector and an amplifier
+   (LM386, LM393, etc.) that’s highly sensitive to sound.
 
+   With these components, it allows for the sensor to work:
 
- 1. Unipolar Stepper with ULN2003.
- 2. Bipolar Stepper with L293D Motor Driver IC.
- 3. BIG Stepper Motors NEMA 23 Bipolar with DM860A Microstep Driver . 
-  
+  Sound waves propagate through air molecules
+  Such sound waves cause the diaphragm in the microphone to vibrate, resulting in capacitance change
+  Capacitance change is then amplified and digitalized for processing of sound intensity
+
 
 
 ## Technologies
