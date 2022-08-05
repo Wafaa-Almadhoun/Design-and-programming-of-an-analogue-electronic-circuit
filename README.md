@@ -23,7 +23,7 @@ operation and programming with Arduino ,We will cover several types : 👍
    they are lightsensitive devices. They are also called as photoconductors, photoconductive cells or simply photocells.
    They are made up of semiconductor materials that have high resistance. 
    
-    ### Analog Sound Sensor
+   ### Analog Sound Sensor
    
    
    Sound detection sensor works similarly to our Ears, having diaphragm which converts vibration into signals.
