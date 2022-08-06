@@ -42,7 +42,6 @@ operation and programming with Arduino ,We will cover several types : 👍
 ## Technologies
 Projects is created with:
 * Arduino IDE 1.8.19 [To Downloud](https://www.arduino.cc/en/software)
-* Proteus [To Downloud](https://www.labcenter.com/simulation/)
 	
 ## Components required
 ### 1.LDR to turn on and off a LED
