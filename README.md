@@ -34,7 +34,8 @@ operation and programming with Arduino ,We will cover several types : 👍
 
      Sound waves propagate through air molecules
      Such sound waves cause the diaphragm in the microphone to vibrate, resulting in capacitance change
-     Capacitance change is then amplified and digitalized for processing of sound intensity
+     Capacitance change is then amplified and digitalized for processing of sound intensity,
+      we will use it in a progect to control LED using a Sound .
 
 
 
@@ -53,12 +54,12 @@ Projects is created with:
     5. USB-A to Micro-USB Cable
     6. breadboard
     
-### 2. Bipolar Stepper with L293D Motor Driver IC
+### 2. controling LED using a Sound
     1. Arduino UNO
-    2. 1  NEMA 17 bipolar stepper
+    2. analog sound sensor
     3. jumper wirs
-    4. L293D Motor Driver IC
-    5. bettrey  5 and 12 volt 
+    4. LED
+    5. Resistor 220 ohm 
     6. breadboard
 
     
@@ -83,18 +84,8 @@ Projects is created with:
        And the the second (free) leg of the LDR to the positive rail
 
      
- ### 2. Bipolar Stepper with L293D Motor Driver IC
- 
-    connecting 5V output on Arduino to the Vcc2 & Vcc1 pins
-    
-    Connect ground to ground.
-    
-    connect the input pins(IN1, IN2, IN3 and IN4) of the L293D IC to 
-    
-    four digital output pins(12, 11, 10 and 9) on Arduino
-    0ne coil of stepper moter connecting to Out1 & Out2 and the anthor coil connecting to Out3 & Out4
-    
- 
+ ### 2. controling LED using a Sound
+
      
 ## Block diagram & simulation
 ### 1. LDR to turn on and off a LED  . 
