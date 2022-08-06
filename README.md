@@ -26,15 +26,15 @@ operation and programming with Arduino ,We will cover several types : 👍
    ### Analog Sound Sensor
    
    
-   Sound detection sensor works similarly to our Ears, having diaphragm which converts vibration into signals.
-   However, what’s different as that a sound sensor ,consists of an in-built capacitive microphone, peak detector and an amplifier
-   (LM386, LM393, etc.) that’s highly sensitive to sound.
+     Sound detection sensor works similarly to our Ears, having diaphragm which converts vibration into signals.
+     However, what’s different as that a sound sensor ,consists of an in-built capacitive microphone, peak detector and         an amplifier
+     (LM386, LM393, etc.) that’s highly sensitive to sound.
 
-   With these components, it allows for the sensor to work:
+     With these components, it allows for the sensor to work:
 
-  Sound waves propagate through air molecules
-  Such sound waves cause the diaphragm in the microphone to vibrate, resulting in capacitance change
-  Capacitance change is then amplified and digitalized for processing of sound intensity
+     Sound waves propagate through air molecules
+     Such sound waves cause the diaphragm in the microphone to vibrate, resulting in capacitance change
+     Capacitance change is then amplified and digitalized for processing of sound intensity
 
 
 
@@ -66,21 +66,21 @@ Projects is created with:
 
 ### 1. LDR to turn on and off a LED
 
-   Connect the 3.3v output of the Arduino to the positive rail of the breadboard
+       Connect the 3.3v output of the Arduino to the positive rail of the breadboard
    
-   Connect the ground to the negative rail of the breadboard
+       Connect the ground to the negative rail of the breadboard
    
-   Connect the 220ohm resistor to the long leg (+ve) of the LED
+       Connect the 220ohm resistor to the long leg (+ve) of the LED
    
-   Then we will connect the other leg of the resistor to pin number 13 (digital pin) of the Arduino
+       Then we will connect the other leg of the resistor to pin number 13 (digital pin) of the Arduino
    
-   and the shorter leg of the LED to the negative rail of the breadboard
+       and the shorter leg of the LED to the negative rail of the breadboard
    
-   Attach the 10K resistor to one of the legs of the LDR
+       Attach the 10K resistor to one of the legs of the LDR
    
-   Connect the A0 pin of the Arduino to the same column where the LDR and resistor is connected 
+       Connect the A0 pin of the Arduino to the same column where the LDR and resistor is connected 
    
-   And the the second (free) leg of the LDR to the positive rail
+       And the the second (free) leg of the LDR to the positive rail
 
      
  ### 2. Bipolar Stepper with L293D Motor Driver IC
@@ -98,8 +98,11 @@ Projects is created with:
      
 ## Block diagram & simulation
 ### 1. LDR to turn on and off a LED  . 
+
 ![Untitled Sketch 2_bb](https://user-images.githubusercontent.com/64277741/183266515-1bc7303f-be9b-4761-84a2-21ce0f3e08e8.png)
+
 Figure (1): LDR to turn on and off a LED
+
  #### when we put a finger in LDR the LED will light up .
  
 
@@ -141,6 +144,7 @@ Serial.println(ldrStatus);
 }
 
 }
+
 
 ### 2. Bipolar Stepper with L293D Motor Driver IC .[see here ](https://github.com/Wafaa-Almadhoun/Stepper-motor-using-Arduino-UNO-R3-/blob/main/Bipolar%20Stepper%20with%20L293D%20Motor%20Driver%20IC.pdsprj)
 ![1](https://user-images.githubusercontent.com/64277741/179328636-268173e6-09b8-46fb-9431-1dfe2eae640f.PNG)
