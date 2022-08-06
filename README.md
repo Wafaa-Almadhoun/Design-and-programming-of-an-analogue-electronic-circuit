@@ -27,8 +27,8 @@ operation and programming with Arduino ,We will cover several types : 👍
    
    
      Sound detection sensor works similarly to our Ears, having diaphragm which converts vibration into signals.
-     However, what’s different as that a sound sensor ,consists of an in-built capacitive microphone, peak detector and         an amplifier
-     (LM386, LM393, etc.) that’s highly sensitive to sound.
+     However, what’s different as that a sound sensor ,consists of an in-built capacitive microphone, 
+     peak detector and an amplifier (LM386, LM393, etc.) that’s highly sensitive to sound.
 
      With these components, it allows for the sensor to work:
 
