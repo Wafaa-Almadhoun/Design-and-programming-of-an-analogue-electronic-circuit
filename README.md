@@ -95,122 +95,51 @@ Projects is created with:
     0ne coil of stepper moter connecting to Out1 & Out2 and the anthor coil connecting to Out3 & Out4
     
  
- ### 3. BIG Stepper Motors NEMA 23 Bipolar with DM860A Microstep Driver 
- 
-     connecting pin6 in Ardunio to -DIR in DM860A 
-     connecting pin7 in Ardunio to -PUL in DM860A
-     connecting +5v output in Ardunio to +PUL & +DIR in DM860A
-     connecting pin2 in Ardunio to one side of push button and also the 10 K ohm resistor connection up to the +5v on the arduino 
-     connecting GND in Ardunio to the other side of push button
-     connecting GND in Ardunio to the one side of potentiometer
-     connecting +5v in Ardunio to the other side of potentiometer
-     connecting pin A0 in Ardunio to the signal of potentiometer
-     connecting the motor driver with 24v battery
-     connecting the pin A+ driver with A+ in DM860A
-     connecting the pin A- driver with A- in DM860A
-     connecting the pin B+ driver with B+ in DM860A
-     connecting the pin B- driver with B- in DM860A
-
      
 ## Block diagram & simulation
-### 1. Unipolar Stepper with ULN2003 . [see here](https://github.com/Wafaa-Almadhoun/Stepper-motor-using-Arduino-UNO-R3-/blob/main/stepper%20using%20ULN2003.pdsprj)
-##### Slow - 4-step CW sequence to observe lights on driver board
-![1](https://user-images.githubusercontent.com/64277741/179306291-f9684758-deaf-4828-9520-757a142ba537.PNG)
-Figure (1): Stepper Motor at 90 degree after 1-step CW sequence
-![2](https://user-images.githubusercontent.com/64277741/179307189-82e1089f-4cbb-403a-b78c-a4c990c24522.PNG)
-Figure (2): Stepper Motor at 180 degree after 2-step CW sequence
-![3](https://user-images.githubusercontent.com/64277741/179307421-bbcf698d-139f-4d30-aae9-9546c057fb68.PNG)
-Figure (3): Stepper Motor at 270 degree after 3-step CW sequence
-![4](https://user-images.githubusercontent.com/64277741/179307644-0f9d39bf-591d-45a1-b9c4-d38ec8528d7d.PNG)
-Figure (4): Stepper Motor at 342 degree after 4-step CW sequence
-##### Rotate CW 1/2 turn slowly
-![5](https://user-images.githubusercontent.com/64277741/179308867-85dbccdc-5070-4164-82c7-9776d4b09fc9.PNG)
-Figure (5): Rotate CW 1/2 turn slowly
-##### Rotate CCW 1/2 turn quickly
-![6](https://user-images.githubusercontent.com/64277741/179309329-1eed85e5-3f0d-48a3-b2be-3d9a40e71869.PNG)
-Figure (6): Rotate CCW 1/2 turn quickly
+### 1. LDR to turn on and off a LED  . 
+![Untitled Sketch 2_bb](https://user-images.githubusercontent.com/64277741/183266515-1bc7303f-be9b-4761-84a2-21ce0f3e08e8.png)
+Figure (1): LDR to turn on and off a LED
+ #### when we put a finger in LDR the LED will light up .
+ 
 
 #### The Code 
- Demonstrates 28BYJ-48 Unipolar Stepper with ULN2003 Driver
- 
-  Uses Arduino Stepper Library
- 
-//Include the Arduino Stepper Library
+const int ledPin = 13;
 
-#include <Stepper.h>
- 
-// Define Constants
- 
-// Number of steps per internal motor revolution 
+const int ldrPin = A0;
 
-const float STEPS_PER_REV = 32; 
- 
-//  Amount of Gear Reduction
+void setup() {
 
-const float GEAR_RED = 64;
- 
-// Number of steps per geared output rotation
+Serial.begin(9600);
 
-const float STEPS_PER_OUT_REV = STEPS_PER_REV * GEAR_RED;
- 
-// Define Variables
- 
-// Number of Steps Required
+pinMode(ledPin, OUTPUT);
 
-int StepsRequired;
- 
-// Create Instance of Stepper Class
-
-// Specify Pins used for motor coils
-
-// The pins used are 8,9,10,11 
-
-// Connected to ULN2003 Motor Driver In1, In2, In3, In4 
-
-// Pins entered in sequence 1-3-2-4 for proper step sequencing
- 
-Stepper steppermotor(STEPS_PER_REV, 8, 10, 9, 11);
- 
-void setup()
-{
-
-// Nothing  (Stepper Library sets pins as outputs)
+pinMode(ldrPin, INPUT);
 
 }
- 
-void loop()
-{
 
-  // Slow - 4-step CW sequence to observe lights on driver board
-  
-  steppermotor.setSpeed(1);    
-  
-  StepsRequired  =  4;
-  
-  steppermotor.step(StepsRequired);
-  
-  delay(2000);
- 
-   // Rotate CW 1/2 turn slowly
-   
-  StepsRequired  =  STEPS_PER_OUT_REV / 2; 
-  
-  steppermotor.setSpeed(100);   
-  
-  steppermotor.step(StepsRequired);
-  
-  delay(1000);
-  
-  // Rotate CCW 1/2 turn quickly
-  
-  StepsRequired  =  - STEPS_PER_OUT_REV / 2;   
-  
-  steppermotor.setSpeed(700);  
-  
-  steppermotor.step(StepsRequired);
-  
-  delay(2000);
- 
+void loop() {
+
+int ldrStatus = analogRead(ldrPin);
+
+if (ldrStatus <= 200) {
+
+digitalWrite(ledPin, HIGH);
+
+Serial.print("Its DARK, Turn on the LED : ");
+
+Serial.println(ldrStatus);
+
+} else {
+
+digitalWrite(ledPin, LOW);
+
+Serial.print("Its BRIGHT, Turn off the LED : ");
+
+Serial.println(ldrStatus);
+
+}
+
 }
 
 ### 2. Bipolar Stepper with L293D Motor Driver IC .[see here ](https://github.com/Wafaa-Almadhoun/Stepper-motor-using-Arduino-UNO-R3-/blob/main/Bipolar%20Stepper%20with%20L293D%20Motor%20Driver%20IC.pdsprj)
