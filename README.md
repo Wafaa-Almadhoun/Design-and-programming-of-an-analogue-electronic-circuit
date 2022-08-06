@@ -54,7 +54,7 @@ Projects is created with:
     5. USB-A to Micro-USB Cable
     6. breadboard
     
-### 2. controling LED using a Sound
+### 2. Controling LED using a Sound
     1. Arduino UNO
     2. analog sound sensor
     3. jumper wirs
@@ -84,9 +84,16 @@ Projects is created with:
        And the the second (free) leg of the LDR to the positive rail
 
      
- ### 2. controling LED using a Sound
+ ### 2.Controling LED using a Sound
+ 
+     connecting sound Sensor pin VCC  to 5V in Ardunio
+     connecting sound Sensor pin GND  to GND in Ardunio
+     connecting sound Sensor pin OUT  to pin2 in Ardunio
+     connecting LED cathode  to GND  in Ardunio
+     connecting LED anode to 220 resistor  and 
+     connecting the another leg  of resistor to pin in Ardunio
 
-     
+
 ## Block diagram & simulation
 ### 1. LDR to turn on and off a LED  . 
 
@@ -137,95 +144,40 @@ Serial.println(ldrStatus);
 }
 
 
-### 2. Bipolar Stepper with L293D Motor Driver IC .[see here ](https://github.com/Wafaa-Almadhoun/Stepper-motor-using-Arduino-UNO-R3-/blob/main/Bipolar%20Stepper%20with%20L293D%20Motor%20Driver%20IC.pdsprj)
-![1](https://user-images.githubusercontent.com/64277741/179328636-268173e6-09b8-46fb-9431-1dfe2eae640f.PNG)
-Figure (7): step one revolution in the other direction ("counterclockwise")
+### 2.Controling LED using a Sound
 
- ![2](https://user-images.githubusercontent.com/64277741/179328701-3dee3532-ada8-4ae9-abdd-f15dcee8762f.PNG)
-Figure (8): step one revolution in one direction ("clockwise")
+![sound sensor_bb](https://user-images.githubusercontent.com/64277741/183268395-1a4ef86f-f8ae-477f-b71e-4951612f03c2.png)
+
+Figure (7): Controling LED using a Sound
+
+#### when we make a loud sound the LED will light up .
 
 #### The code 
+int soundSensor=2;
+int LED=4;
+boolean LEDStatus=false;
 
-// Include the Arduino Stepper Library
-#include <Stepper.h>
-
-// Number of steps per output rotation NEMA 17
-
-const int stepsPerRevolution = 200; 
-
-// Create Instance of Stepper library
-
-Stepper myStepper(stepsPerRevolution, 12, 11, 10, 9);
-
-
-void setup()
-{
-  // set the speed at 20 rpm:
-  
-  myStepper.setSpeed(20);
-  
-}
-
-void loop() 
-{
-  // step one revolution in one direction:
-  
-  myStepper.step(stepsPerRevolution);
-  
-  delay(1000);
-
-  // step one revolution in the other direction:
-  
-  myStepper.step(-stepsPerRevolution);
-  
-  delay(1000);
-}
-
-
-### 3. BIG Stepper Motors NEMA 23 Bipolar with DM860A Microstep Driver  
-![3BIG Stepper Motors NEMA 23 Bipolar with DM860A Microstep Driver](https://user-images.githubusercontent.com/64277741/179338072-d89222ff-f4ea-4005-a69e-4427b546f48d.png)
-
-#### The Code 
-// Defin pins
- 
-int reverseSwitch = 2;  // Push button for reverse
-int driverPUL = 7;    // PUL- pin
-int driverDIR = 6;    // DIR- pin
-int spd = A0;     // Potentiometer
- 
-// Variables
- 
-int pd = 500;       // Pulse Delay period
-boolean setdir = LOW; // Set Direction
- 
-// Interrupt Handler
- 
-void revmotor (){
- 
-  setdir = !setdir;
-  
-}
- 
- 
 void setup() {
- 
-  pinMode (driverPUL, OUTPUT);
-  pinMode (driverDIR, OUTPUT);
-  attachInterrupt(digitalPinToInterrupt(reverseSwitch), revmotor, FALLING);
-  
-}
- 
-void loop() {
-  
-    pd = map((analogRead(spd)),0,1023,2000,50);
-    digitalWrite(driverDIR,setdir);
-    digitalWrite(driverPUL,HIGH);
-    delayMicroseconds(pd);
-    digitalWrite(driverPUL,LOW);
-    delayMicroseconds(pd);
- 
+ pinMode(soundSensor,INPUT);
+ pinMode(LED,OUTPUT);
+
 }
 
+void loop() {
+
+  int SensorData=digitalRead(soundSensor); 
+  if(SensorData==1){
+
+    if(LEDStatus==false){
+        LEDStatus=true;
+        digitalWrite(LED,HIGH);
+    }
+    else{
+        LEDStatus=false;
+        digitalWrite(LED,LOW);
+    }
+  }
+ } 
 
 
 
