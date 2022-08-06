@@ -67,10 +67,21 @@ Projects is created with:
 ### 1. LDR to turn on and off a LED
 
    Connect the 3.3v output of the Arduino to the positive rail of the breadboard
+   
    Connect the ground to the negative rail of the breadboard
+   
    Connect the 220ohm resistor to the long leg (+ve) of the LED
+   
    Then we will connect the other leg of the resistor to pin number 13 (digital pin) of the Arduino
+   
    and the shorter leg of the LED to the negative rail of the breadboard
+   
+   Attach the 10K resistor to one of the legs of the LDR
+   
+   Connect the A0 pin of the Arduino to the same column where the LDR and resistor is connected 
+   
+   And the the second (free) leg of the LDR to the positive rail
+
      
  ### 2. Bipolar Stepper with L293D Motor Driver IC
  
