@@ -147,7 +147,7 @@ Serial.println(ldrStatus);
 
 ![sound sensor_bb](https://user-images.githubusercontent.com/64277741/183268395-1a4ef86f-f8ae-477f-b71e-4951612f03c2.png)
 
-Figure (7): Controling LED using a Sound
+Figure (2): Controling LED using a Sound
 
 #### when we make a loud sound the LED will light up .
 
